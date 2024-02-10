@@ -37,25 +37,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun OnboardingScreen(onContinueClicked: () -> Unit, modifier: Modifier = Modifier) {
-
-    Column(
-        modifier = modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text("welcome to the basics codelab")
-        Button(
-            modifier = Modifier.padding(vertical = 24.dp),
-            onClick = { onContinueClicked }
-        ) {
-            Text("continue")
-        }
-    }
-}
-
-@Composable
-fun MyApp(modifier: Modifier = Modifier, names: List<String> = listOf("yu", "jin")) {
+fun MyApp(modifier: Modifier = Modifier) {
     var shouldShowOnboarding by remember { mutableStateOf(true) }
 
     Surface(modifier) {
@@ -68,8 +50,29 @@ fun MyApp(modifier: Modifier = Modifier, names: List<String> = listOf("yu", "jin
 }
 
 @Composable
+fun OnboardingScreen(
+    onContinueClicked: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        modifier = modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text("welcome to the basics codelab")
+        Button(
+            modifier = Modifier.padding(vertical = 24.dp),
+            onClick = onContinueClicked
+        ) {
+            Text("continue")
+        }
+    }
+}
+
+@Composable
 private fun Greetings(
-    modifier: Modifier = Modifier, names: List<String> = listOf("yu", "jin")
+    modifier: Modifier = Modifier,
+    names: List<String> = listOf("yu", "jin")
 ) {
     Column(modifier = modifier.padding(vertical = 4.dp)) {
         for (name in names) {
@@ -82,21 +85,24 @@ private fun Greetings(
 fun Greeting(name: String, modifier: Modifier = Modifier) {
 
     var expanded by remember { mutableStateOf(false) }
-    var extarPadding = if (expanded) 48.dp else 0.dp
+    val extarPadding = if (expanded) 48.dp else 0.dp
 
     Surface(
         color = MaterialTheme.colorScheme.primary,
         modifier = modifier.padding(vertical = 4.dp, horizontal = 8.dp)
     ) {
         Row(modifier = Modifier.padding(24.dp)) {
-            Column(modifier = Modifier
-                .weight(1f)
-                .padding(bottom = extarPadding)
+            Column(
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(bottom = extarPadding)
             ) {
                 Text(text = "Hello")
                 Text(text = name)
             }
-            ElevatedButton(onClick = { expanded = !expanded }) {
+            ElevatedButton(
+                onClick = { expanded = !expanded }
+            ) {
                 Text(if (expanded) "show less" else "show more")
             }
         }
@@ -111,7 +117,7 @@ fun OnboardingPreview() {
     }
 }
 
-@Preview(showBackground = true, widthDp = 320, heightDp = 320)
+@Preview(showBackground = true, widthDp = 320)
 @Composable
 fun GreetingPreview() {
     CodeLabBasicsTheme {

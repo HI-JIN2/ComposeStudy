@@ -42,21 +42,21 @@ fun DemoScreen() {
 
 @Composable
 fun MyTextField() {
-    var textState = remember { mutableStateOf("") }
+    var textState by remember { mutableStateOf("") }
 
     val onTextChange = { text: String ->
-        textState.value = text
+        textState = text
     }
 
-    TextField(value = textState.value, onValueChange = onTextChange)
+    TextField(value = textState, onValueChange = onTextChange)
 }
 
 @Composable
 fun FunctionA() {
-    var switchState by remember { mutableStateOf(true) }
+    var switchState by remember { mutableStateOf(true) } //값이 변경되었음을 감지하고 재구성할 수 있도록 도움
 
     val onSwitchChange = { value: Boolean ->
-        switchState = value
+        switchState = value //할당하는 일을 한다.
     }
 
     FunctionB(

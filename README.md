@@ -1,4 +1,8 @@
 # ComposeStudy
+
+## 공부 기간
+2024.2.8~
+
 ## 공부 자료
 
 1. [유튜브] 정대리 콤포즈 뽀개기 [1강](https://youtu.be/y4Zuyr2GSO4?si=E61cKsSYHGChbmuC), [2강](https://youtu.be/6CEDQ1W-6AY?si=b4qzH06bKkn0m257)

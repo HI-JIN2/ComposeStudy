@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.codelab.basiclayouts
+package com.codelab.basiclayout
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -26,7 +26,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.codelab.basiclayouts.ui.theme.MySootheTheme
+import com.codelab.basiclayout.ui.theme.MySootheTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.codelab.basiclayouts.ui.theme
+package com.codelab.basiclayout.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes

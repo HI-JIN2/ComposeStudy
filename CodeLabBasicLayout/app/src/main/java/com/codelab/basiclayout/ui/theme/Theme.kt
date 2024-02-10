@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.codelab.basiclayouts.ui.theme
+package com.codelab.basiclayout.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
